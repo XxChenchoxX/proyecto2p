@@ -53,7 +53,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
         child: Scaffold(
             backgroundColor: kWhiteColor,
             appBar: const CustomAppBar(
-              title: 'Create New Task',
+              title: 'Crear Nueva Tarea',
             ),
             body: GestureDetector(
                 behavior: HitTestBehavior.opaque,
@@ -76,8 +76,8 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                             calendarFormat: _calendarFormat,
                             startingDayOfWeek: StartingDayOfWeek.monday,
                             availableCalendarFormats: const {
-                              CalendarFormat.month: 'Month',
-                              CalendarFormat.week: 'Week',
+                              CalendarFormat.month: 'Mes',
+                              CalendarFormat.week: 'Semana',
                             },
                             rangeSelectionMode: RangeSelectionMode.toggledOn,
                             focusedDay: _focusedDay,
@@ -109,8 +109,8 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                                     const BorderRadius.all(Radius.circular(5))),
                             child: buildText(
                                 _rangeStart != null && _rangeEnd != null
-                                    ? 'Task starting at ${formatDate(dateTime: _rangeStart.toString())} - ${formatDate(dateTime: _rangeEnd.toString())}'
-                                    : 'Select a date range',
+                                    ? 'Tarea que comienza en ${formatDate(dateTime: _rangeStart.toString())} - ${formatDate(dateTime: _rangeEnd.toString())}'
+                                    : 'Seleccione un rango de fechas',
                                 kPrimaryColor,
                                 textSmall,
                                 FontWeight.w400,
@@ -119,7 +119,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                           ),
                           const SizedBox(height: 20),
                           buildText(
-                              'Title',
+                              'Titulo',
                               kBlackColor,
                               textMedium,
                               FontWeight.bold,
@@ -129,7 +129,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                             height: 10,
                           ),
                           BuildTextField(
-                              hint: "Task Title",
+                              hint: "Título de la tarea",
                               controller: title,
                               inputType: TextInputType.text,
                               fillColor: kWhiteColor,
@@ -138,7 +138,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                             height: 20,
                           ),
                           buildText(
-                              'Description',
+                              'Descripción',
                               kBlackColor,
                               textMedium,
                               FontWeight.bold,
@@ -148,7 +148,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                             height: 10,
                           ),
                           BuildTextField(
-                              hint: "Task Description",
+                              hint: "Descripción de la Tarea",
                               controller: description,
                               inputType: TextInputType.multiline,
                               fillColor: kWhiteColor,
@@ -160,12 +160,12 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                                 child: ElevatedButton(
                                     style: ButtonStyle(
                                       foregroundColor:
-                                          MaterialStateProperty.all<Color>(
+                                          WidgetStateProperty.all<Color>(
                                               Colors.white),
                                       backgroundColor:
-                                          MaterialStateProperty.all<Color>(
+                                          WidgetStateProperty.all<Color>(
                                               kWhiteColor),
-                                      shape: MaterialStateProperty.all<
+                                      shape: WidgetStateProperty.all<
                                           RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
@@ -179,7 +179,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(15),
                                       child: buildText(
-                                          'Cancel',
+                                          'Cancelar',
                                           kBlackColor,
                                           textMedium,
                                           FontWeight.w600,
@@ -194,12 +194,12 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                                 child: ElevatedButton(
                                     style: ButtonStyle(
                                       foregroundColor:
-                                          MaterialStateProperty.all<Color>(
+                                          WidgetStateProperty.all<Color>(
                                               Colors.white),
                                       backgroundColor:
-                                          MaterialStateProperty.all<Color>(
+                                          WidgetStateProperty.all<Color>(
                                               kPrimaryColor),
-                                      shape: MaterialStateProperty.all<
+                                      shape: WidgetStateProperty.all<
                                           RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
@@ -224,7 +224,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(15),
                                       child: buildText(
-                                          'Save',
+                                          'Guardar',
                                           kWhiteColor,
                                           textMedium,
                                           FontWeight.w600,

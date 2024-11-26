@@ -2,10 +2,10 @@ import 'dart:io';
 
 String handleException(dynamic exception) {
   if (exception is FormatException) {
-    return 'Invalid data format. Please check your input.';
+    return 'Formato de datos no válido. Por favor revise su entrada.';
   } else if (exception is PathAccessException) {
-    return 'Unable to load storage';
+    return 'No se puede cargar el almacenamiento';
   } else {
-    return 'An unexpected error occurred. Please try again later.';
+    return 'Se produjo un error inesperado. Por favor inténtalo de nuevo más tarde.';
   }
 }

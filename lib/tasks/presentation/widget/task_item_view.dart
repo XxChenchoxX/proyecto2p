@@ -90,7 +90,7 @@ class _TaskItemViewState extends State<TaskItemView> {
                                     width: 10,
                                   ),
                                   buildText(
-                                      'Edit task',
+                                      'Editar Tarea',
                                       kBlackColor,
                                       textMedium,
                                       FontWeight.normal,
@@ -111,7 +111,7 @@ class _TaskItemViewState extends State<TaskItemView> {
                                     width: 10,
                                   ),
                                   buildText(
-                                      'Delete task',
+                                      'Eliminar Tarea',
                                       kRed,
                                       textMedium,
                                       FontWeight.normal,

@@ -24,16 +24,16 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
     emit(TasksLoading());
     try {
       if (event.taskModel.title.trim().isEmpty) {
-        return emit(AddTaskFailure(error: 'Task title cannot be blank'));
+        return emit(AddTaskFailure(error: 'El título de la tarea no puede estar en blanco'));
       }
       if (event.taskModel.description.trim().isEmpty) {
-        return emit(AddTaskFailure(error: 'Task description cannot be blank'));
+        return emit(AddTaskFailure(error: 'La descripción de la tarea no puede estar en blanco'));
       }
       if (event.taskModel.startDateTime == null) {
-        return emit(AddTaskFailure(error: 'Missing task start date'));
+        return emit(AddTaskFailure(error: 'Falta la fecha de inicio de la tarea'));
       }
       if (event.taskModel.stopDateTime == null) {
-        return emit(AddTaskFailure(error: 'Missing task stop date'));
+        return emit(AddTaskFailure(error: 'Falta la fecha de finalización de la tarea'));
       }
       await taskRepository.createNewTask(event.taskModel);
       emit(AddTasksSuccess());
@@ -57,17 +57,17 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
   _updateTask(UpdateTaskEvent event, Emitter<TasksState> emit) async {
     try {
       if (event.taskModel.title.trim().isEmpty) {
-        return emit(UpdateTaskFailure(error: 'Task title cannot be blank'));
+        return emit(UpdateTaskFailure(error: 'El título de la tarea no puede estar en blanco'));
       }
       if (event.taskModel.description.trim().isEmpty) {
         return emit(
-            UpdateTaskFailure(error: 'Task description cannot be blank'));
+            UpdateTaskFailure(error: 'La descripción de la tarea no puede estar en blanco'));
       }
       if (event.taskModel.startDateTime == null) {
-        return emit(UpdateTaskFailure(error: 'Missing task start date'));
+        return emit(UpdateTaskFailure(error: 'Falta la fecha de inicio de la tarea'));
       }
       if (event.taskModel.stopDateTime == null) {
-        return emit(UpdateTaskFailure(error: 'Missing task stop date'));
+        return emit(UpdateTaskFailure(error: 'Falta la fecha de finalización de la tarea'));
       }
       emit(TasksLoading());
       final tasks = await taskRepository.updateTask(event.taskModel);

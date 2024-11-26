@@ -67,7 +67,7 @@ class _UpdateTaskScreenState extends State<UpdateTaskScreen> {
         child: Scaffold(
             backgroundColor: kWhiteColor,
             appBar: const CustomAppBar(
-              title: 'Update Task',
+              title: 'Actualizar Tarea',
             ),
             body: GestureDetector(
                 behavior: HitTestBehavior.opaque,
@@ -90,8 +90,8 @@ class _UpdateTaskScreenState extends State<UpdateTaskScreen> {
                             calendarFormat: _calendarFormat,
                             startingDayOfWeek: StartingDayOfWeek.monday,
                             availableCalendarFormats: const {
-                              CalendarFormat.month: 'Month',
-                              CalendarFormat.week: 'Week',
+                              CalendarFormat.month: 'Mes',
+                              CalendarFormat.week: 'Semana',
                             },
                             rangeSelectionMode: RangeSelectionMode.toggledOn,
                             focusedDay: _focusedDay,
@@ -123,8 +123,8 @@ class _UpdateTaskScreenState extends State<UpdateTaskScreen> {
                                     const BorderRadius.all(Radius.circular(5))),
                             child: buildText(
                                 _rangeStart != null && _rangeEnd != null
-                                    ? 'Task starting at ${formatDate(dateTime: _rangeStart.toString())} - ${formatDate(dateTime: _rangeEnd.toString())}'
-                                    : 'Select a date range',
+                                    ? 'Tarea que comienza en ${formatDate(dateTime: _rangeStart.toString())} - ${formatDate(dateTime: _rangeEnd.toString())}'
+                                    : 'Seleccione un rango de fechas',
                                 kPrimaryColor,
                                 textSmall,
                                 FontWeight.w400,
@@ -133,7 +133,7 @@ class _UpdateTaskScreenState extends State<UpdateTaskScreen> {
                           ),
                           const SizedBox(height: 20),
                           buildText(
-                              'Title',
+                              'Titulo',
                               kBlackColor,
                               textMedium,
                               FontWeight.bold,
@@ -143,7 +143,7 @@ class _UpdateTaskScreenState extends State<UpdateTaskScreen> {
                             height: 10,
                           ),
                           BuildTextField(
-                              hint: "Task Title",
+                              hint: "Titulo de la Tarea",
                               controller: title,
                               inputType: TextInputType.text,
                               fillColor: kWhiteColor,
@@ -152,7 +152,7 @@ class _UpdateTaskScreenState extends State<UpdateTaskScreen> {
                             height: 20,
                           ),
                           buildText(
-                              'Description',
+                              'Descripción',
                               kBlackColor,
                               textMedium,
                               FontWeight.bold,
@@ -162,7 +162,7 @@ class _UpdateTaskScreenState extends State<UpdateTaskScreen> {
                             height: 10,
                           ),
                           BuildTextField(
-                              hint: "Task Description",
+                              hint: "Descripción de la Tarea",
                               controller: description,
                               inputType: TextInputType.multiline,
                               fillColor: kWhiteColor,
@@ -173,12 +173,12 @@ class _UpdateTaskScreenState extends State<UpdateTaskScreen> {
                             child: ElevatedButton(
                                 style: ButtonStyle(
                                   foregroundColor:
-                                      MaterialStateProperty.all<Color>(
+                                      WidgetStateProperty.all<Color>(
                                           Colors.white),
                                   backgroundColor:
-                                      MaterialStateProperty.all<Color>(
+                                      WidgetStateProperty.all<Color>(
                                           kPrimaryColor),
-                                  shape: MaterialStateProperty.all<
+                                  shape: WidgetStateProperty.all<
                                       RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(
@@ -200,7 +200,7 @@ class _UpdateTaskScreenState extends State<UpdateTaskScreen> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(15),
                                   child: buildText(
-                                      'Update',
+                                      'Actualizar',
                                       kWhiteColor,
                                       textMedium,
                                       FontWeight.w600,

@@ -41,7 +41,7 @@ class _TasksScreenState extends State<TasksScreen> {
             child: Scaffold(
           backgroundColor: kWhiteColor,
           appBar: CustomAppBar(
-            title: 'Hi Jerome',
+            title: 'Bienvenido',
             showBackArrow: false,
             actionWidgets: [
               PopupMenuButton<int>(
@@ -88,7 +88,7 @@ class _TasksScreenState extends State<TasksScreen> {
                             width: 10,
                           ),
                           buildText(
-                              'Sort by date',
+                              'Ordenar por fecha',
                               kBlackColor,
                               textSmall,
                               FontWeight.normal,
@@ -109,7 +109,7 @@ class _TasksScreenState extends State<TasksScreen> {
                             width: 10,
                           ),
                           buildText(
-                              'Completed tasks',
+                              'Tareas Completadas',
                               kBlackColor,
                               textSmall,
                               FontWeight.normal,
@@ -130,7 +130,7 @@ class _TasksScreenState extends State<TasksScreen> {
                             width: 10,
                           ),
                           buildText(
-                              'Pending tasks',
+                              'Tareas Pendientes',
                               kBlackColor,
                               textSmall,
                               FontWeight.normal,
@@ -187,7 +187,7 @@ class _TasksScreenState extends State<TasksScreen> {
                           ? Column(
                               children: [
                                 BuildTextField(
-                                    hint: "Search recent task",
+                                    hint: "Buscar tarea reciente",
                                     controller: searchController,
                                     inputType: TextInputType.text,
                                     prefixIcon: const Icon(
@@ -233,14 +233,14 @@ class _TasksScreenState extends State<TasksScreen> {
                                     height: 50,
                                   ),
                                   buildText(
-                                      'Schedule your tasks',
+                                      'Programe sus tareas',
                                       kBlackColor,
                                       textBold,
                                       FontWeight.w600,
                                       TextAlign.center,
                                       TextOverflow.clip),
                                   buildText(
-                                      'Manage your task schedule easily\nand efficiently',
+                                      'Administre su programación de tareas de manera fácil\ny eficiente',
                                       kBlackColor.withOpacity(.5),
                                       textSmall,
                                       FontWeight.normal,
